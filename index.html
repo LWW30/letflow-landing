@@ -333,25 +333,22 @@ async function signup(src) {
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://formspree.io/f/xblgrpge', {
+    await fetch('https://nauikxogjpltgiavivti.supabase.co/rest/v1/waitlist', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ email, source: src === 'h' ? 'hero' : 'cta' })
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hdWlreG9nanBsdGdpYXZpdnRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MjA3NjQsImV4cCI6MjA5MDM5Njc2NH0.76gT5ETRTC1U2Ezu5VZW9EWreumf0bxKFiAlztSlKGs',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hdWlreG9nanBsdGdpYXZpdnRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MjA3NjQsImV4cCI6MjA5MDM5Njc2NH0.76gT5ETRTC1U2Ezu5VZW9EWreumf0bxKFiAlztSlKGs',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ email: email, source: src === 'h' ? 'hero' : 'cta' })
     });
+  } catch(e) {}
 
-    if (res.ok) {
-      const c = document.getElementById('count');
-      if (c) { const n = parseInt(c.textContent) || 47; c.textContent = (n + 1) + ' landlords'; }
-      form.style.display = 'none';
-      ok.style.display = 'inline-block';
-    } else {
-      throw new Error('Server error');
-    }
-  } catch(e) {
-    // Fallback: still show success to user (we log what we can)
-    form.style.display = 'none';
-    ok.style.display = 'inline-block';
-  }
+  const c = document.getElementById('count');
+  if (c) { const n = parseInt(c.textContent) || 47; c.textContent = (n + 1) + ' landlords'; }
+  form.style.display = 'none';
+  ok.style.display = 'inline-block';
 }
 </script>
 </body>
