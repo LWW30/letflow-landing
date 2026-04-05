@@ -63,9 +63,9 @@ h1 em{font-style:italic;color:var(--green)}
 .slide-bar{background:#1d1d1b;padding:12px 16px;display:flex;align-items:center;gap:8px}
 .dot{width:12px;height:12px;border-radius:50%}
 .slide-url{flex:1;text-align:center;font-size:12px;color:#555;background:#111;border-radius:6px;padding:4px 16px;max-width:300px;margin:0 auto}
-.slides-wrap{position:relative;overflow:hidden;height:420px}
-.slide{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;padding:20px;background:#111;flex-direction:column;gap:12px;opacity:0;pointer-events:none;transition:opacity .35s ease}
-.slide.active{opacity:1;pointer-events:auto}
+.slides-wrap{overflow:hidden}
+.slide{display:none;padding:20px;background:#111;flex-direction:column;gap:12px}
+.slide.active{display:flex}
 
 /* Slide inner styles — app UI mockups */
 .slide-inner{display:grid;grid-template-columns:160px 1fr;gap:0;background:#0a0a09;border-radius:12px;overflow:hidden;border:1px solid #1a1a18}
@@ -611,11 +611,11 @@ SLIDES.forEach((s, i) => {
 
 function goSlide(n) {
   const prev = document.getElementById('slide-' + cur);
-  if (prev) prev.style.display = 'none';
+  if (prev) { prev.style.display = 'none'; prev.classList.remove('active'); }
   document.querySelectorAll('.slide-dot')[cur]?.classList.remove('on');
   cur = (n + SLIDES.length) % SLIDES.length;
   const next = document.getElementById('slide-' + cur);
-  if (next) next.style.display = 'flex';
+  if (next) { next.style.display = 'flex'; next.classList.add('active'); }
   document.querySelectorAll('.slide-dot')[cur]?.classList.add('on');
   labelEl.textContent = SLIDES[cur].label;
   urlEl.textContent = SLIDES[cur].url;
@@ -623,6 +623,8 @@ function goSlide(n) {
 }
 function moveSlide(d) { goSlide(cur + d); }
 function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => moveSlide(1), 5000); }
+// Init: hide all, show first
+document.querySelectorAll('.slide').forEach(s => s.style.display = 'none');
 goSlide(0);
 resetAuto();
 
