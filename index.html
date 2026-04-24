@@ -275,12 +275,12 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
     <button class="btn" onclick="signup('h')">Start free — no credit card</button>
   </div>
   <div class="success-msg" id="h-ok">&#10003; You are on the list! Check your inbox shortly.</div>
-  <p class="hero-note">Free during beta &middot; No credit card &middot; UK landlords only</p>
+  <p class="hero-note">Free plan available &middot; No credit card &middot; UK landlords only</p>
   <div class="social">
     <div class="avatars">
       <div class="av">JB</div><div class="av">SR</div><div class="av">AK</div><div class="av">MP</div>
     </div>
-    <p class="social-txt"><strong id="count">47 landlords</strong> already on the waitlist</p>
+    <p class="social-txt"><strong id="count">47 landlords</strong> landlords already using LetFlowUK</p>
   </div>
 </section>
 
@@ -535,50 +535,63 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
 <section class="pricing" id="pricing">
   <div class="tag">Pricing</div>
   <h2 class="sec-title">Simple, honest pricing</h2>
-  <p class="pricing-sub">Start free — no credit card needed. Upgrade to Pro when you need compliance tracking, legal notices and automated reminders.</p>
-  <div class="p-cards" style="grid-template-columns:1fr 1fr;max-width:680px;margin:0 auto">
-    <div class="p-card">
-      <div class="plan-n">Free</div>
-      <div class="price">&pound;0</div>
-      <div class="period">forever</div>
-      <ul class="p-feats">
-        <li>Up to 2 properties</li>
-        <li>Per-room rent tracking</li>
-        <li>Shared bills splitting</li>
-        <li>Tenant portal links</li>
-        <li>Document storage</li>
-      </ul>
-      <button class="p-btn" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Get started free</button>
-    </div>
-    <div class="p-card pro">
-      <div class="popular-tag">&#11088; Most popular</div>
-      <div class="plan-n">Pro</div>
-      <div class="price">&pound;19</div>
-      <div class="period">per month &mdash; 14-day free trial</div>
-      <ul class="p-feats">
-        <li>Unlimited properties</li>
-        <li>Everything in Free</li>
-        <li>Compliance certificate tracking &amp; alerts</li>
-        <li>Maintenance request tracking</li>
-        <li>RRA 2025 compliance checklist</li>
-        <li>Legal notice generator (S8 &amp; S13)</li>
-        <li>Automated tenant email reminders</li>
-        <li>GoCardless Direct Debit collection</li>
-        <li>Priority email support</li>
-      </ul>
-      <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 16px;margin-bottom:20px">
-        <p style="color:rgba(255,255,255,.95);font-size:13px;font-weight:600;margin:0 0 4px">&#127968; GoCardless Direct Debit &mdash; coming soon</p>
-        <p style="color:rgba(255,255,255,.65);font-size:12px;margin:0;line-height:1.5">Collect rent automatically via BACS. Tenants authorise from their portal link — rent lands in your account on due date, no chasing.</p>
+  <p class="sec-sub">Start free. Upgrade when you're ready. No per-property fees, ever.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:48px auto 0;padding:0 24px;">
+
+    <!-- Free Plan -->
+    <div style="background:#fff;border:1.5px solid #e5e7eb;border-radius:16px;padding:32px;display:flex;flex-direction:column;">
+      <div style="margin-bottom:24px;">
+        <p style="font-size:13px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 8px;">Free</p>
+        <div style="display:flex;align-items:baseline;gap:4px;">
+          <span style="font-size:42px;font-weight:700;color:#111827;">£0</span>
+          <span style="font-size:15px;color:#6b7280;">/month</span>
+        </div>
+        <p style="font-size:14px;color:#6b7280;margin:8px 0 0;">No credit card required</p>
       </div>
-      <button class="p-btn" onclick="window.location.href='https://app.letflowuk.com/login?mode=signup&amp;plan=pro'">Start 14-day free trial &rarr;</button>
+      <ul style="list-style:none;padding:0;margin:0 0 32px;flex:1;display:flex;flex-direction:column;gap:12px;">
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> Up to 3 properties</li>
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> Unlimited tenants &amp; rooms</li>
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> Rent tracking &amp; overdue alerts</li>
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> Document storage</li>
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> RRA 2025 compliance checklist</li>
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> Shared bills tracker</li>
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> Tenant referencing directory</li>
+        <li style="font-size:14px;color:#374151;display:flex;align-items:center;gap:10px;"><span style="color:#16a34a;font-size:16px;">&#10003;</span> Profit &amp; Loss report</li>
+      </ul>
+      <a href="https://app.letflowuk.com" style="display:block;text-align:center;padding:14px;border:1.5px solid #111827;border-radius:10px;font-size:15px;font-weight:600;color:#111827;text-decoration:none;">Get started free</a>
     </div>
+
+    <!-- Pro Plan -->
+    <div style="background:#111827;border:1.5px solid #111827;border-radius:16px;padding:32px;display:flex;flex-direction:column;position:relative;">
+      <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#16a34a;color:white;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;white-space:nowrap;">Most popular</div>
+      <div style="margin-bottom:24px;">
+        <p style="font-size:13px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 8px;">Pro</p>
+        <div style="display:flex;align-items:baseline;gap:4px;">
+          <span style="font-size:42px;font-weight:700;color:#fff;">£19</span>
+          <span style="font-size:15px;color:#9ca3af;">/month</span>
+        </div>
+        <p style="font-size:14px;color:#9ca3af;margin:8px 0 0;">14-day free trial &middot; Cancel any time</p>
+      </div>
+      <ul style="list-style:none;padding:0;margin:0 0 32px;flex:1;display:flex;flex-direction:column;gap:12px;">
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> Everything in Free</li>
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> Unlimited properties</li>
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> AST tenancy agreement generator</li>
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> Section 8 &amp; Section 13 notice generator</li>
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> GoCardless Direct Debit rent collection</li>
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> Maintenance request portal</li>
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> Daily overdue rent alerts to you</li>
+        <li style="font-size:14px;color:#f3f4f6;display:flex;align-items:center;gap:10px;"><span style="color:#4ade80;font-size:16px;">&#10003;</span> Priority support</li>
+      </ul>
+      <a href="https://app.letflowuk.com/dashboard/billing" style="display:block;text-align:center;padding:14px;background:#16a34a;border:1.5px solid #16a34a;border-radius:10px;font-size:15px;font-weight:600;color:white;text-decoration:none;">Start 14-day free trial &#8594;</a>
+    </div>
+
   </div>
-  <p class="pricing-note">&#128274; 14-day free trial on Pro &middot; Cancel any time &middot; No setup fees &middot; Free plan needs no card</p>
+  <p style="text-align:center;margin-top:20px;font-size:13px;color:#9ca3af;">14-day free trial on Pro &middot; Cancel any time &middot; No setup fees &middot; Free plan needs no card</p>
 </section>
 
-<!-- CTA -->
 <section class="cta" id="signup">
-  <h2>Join the waitlist today</h2>
+  <h2>Start managing your HMO today</h2>
   <p>Be first when we launch. Early users get Pro free for 3 months.</p>
   <div class="cta-form" id="cform">
     <input type="email" id="c-email" placeholder="your@email.com">
