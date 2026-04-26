@@ -243,6 +243,8 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
   .stats-grid{grid-template-columns:1fr 1fr}
   .s-stats{grid-template-columns:repeat(2,1fr)}
 }
+
+.section-title{text-align:center!important}.section-subtitle{text-align:center!important}.features-grid h2,.features-grid p{text-align:center}.section .container>h2,.section .container>p{text-align:center}
 </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"LetFlowUK","alternateName":"LetFlow UK","url":"https://letflowuk.com","applicationCategory":"BusinessApplication","operatingSystem":"Web, iOS, Android","description":"HMO management software for UK landlords. Track rent per room, RRA 2025 compliance, maintenance, documents.","offers":{"@type":"Offer","price":"19","priceCurrency":"GBP"},"provider":{"@type":"Organization","name":"LetFlowUK","url":"https://letflowuk.com"}}
@@ -534,7 +536,7 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
     <div style="text-align:center;margin-bottom:40px;">
       <span class="tag">PRICING</span>
       <h2 class="section-title" style="text-align:center">Simple, honest pricing</h2>
-      <p class="section-subtitle">Start free. Upgrade when you're ready. No per-property fees, ever.</p>
+      <p class="section-subtitle" style="text-align:center">Start free. Upgrade when you're ready. No per-property fees, ever.</p>
     </div>
 
     <!-- Founding member banner -->
@@ -720,8 +722,7 @@ async function signup(src) {
   const btn = form ? form.querySelector('button') : null;
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     if (emailEl) { emailEl.style.borderColor = '#ef4444'; setTimeout(() => emailEl.style.borderColor = '', 2500); }
-    return;
-  }
+fix: landing — centre all section headings and subtitles  }
   if (btn) { btn.textContent = 'Joining...'; btn.disabled = true; }
   try {
     await fetch(SUPABASE_URL + '/rest/v1/waitlist', {
