@@ -6,9 +6,9 @@
 <title>LetFlowUK | HMO Management Software for UK Landlords</title>
 <meta name="robots" content="index, follow">
   <meta name="keywords" content="LetFlowUK, HMO management software, UK HMO landlord software, house in multiple occupation software, HMO property management UK, RRA 2025 compliance, rent tracking HMO, landlord software UK">
-  <meta name="description" content="LetFlowUK is HMO management software for UK landlords. Track rent per room, stay RRA 2025 compliant, manage maintenance and documents. Free to start, £19/mo Pro.">
+  <meta name="description" content="LetFlowUK is HMO management software for UK landlords. Track rent per room, stay RRA 2025 compliant, manage maintenance and documents. Free to start, £29/mo Pro.">
 <meta property="og:title" content="LetFlowUK | HMO Management Software for UK Landlords">
-<meta property="og:description" content="LetFlowUK — HMO management software for UK landlords. Rent tracking, RRA 2025 compliance, maintenance, documents. £19/mo or £228/yr.">
+<meta property="og:description" content="LetFlowUK — HMO management software for UK landlords. Rent tracking, RRA 2025 compliance, maintenance, documents. £29/mo or £240/yr.">
 <link rel="canonical" href="https://letflowuk.com/">
 <meta property="og:type" content="website">
 <meta property="fb:app_id" content="966242223397117">
@@ -554,8 +554,8 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
     <div style="display:flex;justify-content:center;margin-bottom:32px;">
       <div style="display:inline-flex;background:#fff;border:1.5px solid #e5e7eb;border-radius:14px;padding:4px;gap:3px;">
         <button onclick="setPricingPlan('founding')" id="pp-founding" style="padding:8px 18px;border-radius:10px;border:none;font-size:14px;font-weight:600;cursor:pointer;background:#f59e0b;color:#fff;transition:all .2s;">⭐ Founding £199/yr</button>
-        <button onclick="setPricingPlan('annual')" id="pp-annual" style="padding:8px 18px;border-radius:10px;border:none;font-size:14px;font-weight:500;cursor:pointer;background:transparent;color:#6b7280;transition:all .2s;">Annual £228/yr</button>
-        <button onclick="setPricingPlan('monthly')" id="pp-monthly" style="padding:8px 18px;border-radius:10px;border:none;font-size:14px;font-weight:500;cursor:pointer;background:transparent;color:#6b7280;transition:all .2s;">Monthly £19/mo</button>
+        <button onclick="setPricingPlan('annual')" id="pp-annual" style="padding:8px 18px;border-radius:10px;border:none;font-size:14px;font-weight:500;cursor:pointer;background:transparent;color:#6b7280;transition:all .2s;">Annual £240/yr</button>
+        <button onclick="setPricingPlan('monthly')" id="pp-monthly" style="padding:8px 18px;border-radius:10px;border:none;font-size:14px;font-weight:500;cursor:pointer;background:transparent;color:#6b7280;transition:all .2s;">Monthly £29/mo</button>
       </div>
     </div>
 
@@ -620,8 +620,8 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
 function setPricingPlan(plan) {
   const plans = {
     founding: {price:'£199',period:'/year',sub:'Price locked forever (£16.58/mo equivalent)',cta:'⭐ Claim founding spot',badge:'FOUNDING',badgeBg:'#f59e0b'},
-    annual:   {price:'£240',period:'/year',sub:'Billed annually — saves £108 vs monthly',cta:'Get Pro — £228/yr',badge:'SAVE £108',badgeBg:'#4f46e5'},
-    monthly:  {price:'£29', period:'/month',sub:'Billed monthly, cancel anytime',cta:'Get Pro — £19/mo',badge:'PRO',badgeBg:'#4f46e5'}
+    annual:   {price:'£240',period:'/year',sub:'Billed annually — saves £108 vs monthly',cta:'Get Pro — £240/yr',badge:'SAVE £108',badgeBg:'#4f46e5'},
+    monthly:  {price:'£29', period:'/month',sub:'Billed monthly, cancel anytime',cta:'Get Pro — £29/mo',badge:'PRO',badgeBg:'#4f46e5'}
   };
   const p = plans[plan];
   document.getElementById('pp-price').textContent = p.price;
@@ -642,7 +642,7 @@ function setPricingPlan(plan) {
 
 <section class="cta" id="signup">
   <h2>Start managing your HMO today</h2>
-  <p>Free plan available — no credit card needed. Upgrade to Pro — from £19/mo or £228/yr.</p>
+  <p>Free plan available — no credit card needed. Upgrade to Pro — from £29/mo or £240/yr.</p>
   <div class="cta-form" id="cform">
     <input type="email" id="c-email" placeholder="your@email.com">
     <button class="btn" onclick="signup('c')">Get started free</button>
