@@ -707,33 +707,11 @@ function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => m
 document.querySelectorAll('.slide').forEach(s => s.style.display = 'none');
 goSlide(0);
 // Signup
-async function signup(src) {
-  const emailEl = document.getElementById(src + '-email');
+function signup(src) {
+  const emailEl = document.getElementById(src === 'h' ? 'h-email' : 'cta-email');
   const email = emailEl ? emailEl.value.trim() : '';
-  const formId = src === 'h' ? 'hform' : 'cform';
-  const form = document.getElementById(formId);
-  const ok = document.getElementById(src + '-ok');
-  const btn = form ? form.querySelector('button') : null;
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    if (emailEl) { emailEl.style.borderColor = '#ef4444'; setTimeout(() => emailEl.style.borderColor = '', 2500); }
-  }
-  if (btn) { btn.textContent = 'Joining...'; btn.disabled = true; }
-  try {
-    await fetch(SUPABASE_URL + '/rest/v1/waitlist', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Prefer': 'return=minimal' },
-      body: JSON.stringify({ email, source: src === 'h' ? 'hero' : 'cta' })
-    });
-    await fetch(SUPABASE_URL + '/functions/v1/send-waitlist-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + SUPABASE_KEY },
-      body: JSON.stringify({ email, source: src })
-    });
-  } catch(e) {}
-  const c = document.getElementById('count');
-  if (c) { const n = parseInt(c.textContent) || 47; c.textContent = (n + 1) + ' landlords'; }
-  if (form) form.style.display = 'none';
-  if (ok) { ok.style.display = 'inline-block'; }
+  const url = 'https://app.letflowuk.com/login?mode=signup' + (email ? '&email=' + encodeURIComponent(email) : '');
+  window.location.href = url;
 }
 </script>
 </body>
