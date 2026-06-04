@@ -544,7 +544,7 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
         <p style="margin:0 0 2px;font-weight:700;color:#92400e;font-size:15px;">Founding member offer — limited time</p>
         <p style="margin:0;color:#b45309;font-size:14px;">Lock in <strong>£199/year</strong> forever (normally £240). Only 8 founding spots remaining.</p>
       </div>
-      <a href="https://app.letflowuk.com/dashboard/billing" style="display:inline-block;background:#f59e0b;color:#fff;font-weight:700;font-size:14px;padding:9px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;">Claim spot →</a>
+      <a href="https://app.letflowuk.com/login?mode=signup" style="display:inline-block;background:#f59e0b;color:#fff;font-weight:700;font-size:14px;padding:9px 20px;border-radius:10px;text-decoration:none;white-space:nowrap;">Claim spot →</a>
     </div>
 
     <!-- Plan toggle -->
@@ -595,7 +595,7 @@ footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-b
           <p style="margin:0;font-size:12px;color:#fca5a5;line-height:1.5;"><strong>Making Tax Digital is live.</strong> Landlords with £50k+ income must submit quarterly digital records to HMRC from June 2026. Pro handles this automatically.</p>
         </div>
 
-        <a id="pp-cta" href="https://app.letflowuk.com/dashboard/billing" style="display:block;text-align:center;background:#fff;color:#1a2332;font-weight:700;font-size:15px;padding:13px;border-radius:12px;text-decoration:none;margin-bottom:24px;">⭐ Claim founding spot</a>
+        <a id="pp-cta" href="https://app.letflowuk.com/login?mode=signup" style="display:block;text-align:center;background:#fff;color:#1a2332;font-weight:700;font-size:15px;padding:13px;border-radius:12px;text-decoration:none;margin-bottom:24px;">⭐ Claim founding spot</a>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
           <div style="display:flex;gap:8px;"><span style="color:#4ade80;font-size:13px;flex-shrink:0;">✓</span><span style="font-size:13px;color:#d1d5db;">Unlimited properties</span></div>
           <div style="display:flex;gap:8px;"><span style="color:#4ade80;font-size:13px;flex-shrink:0;">✓</span><span style="font-size:13px;color:#d1d5db;">GoCardless Direct Debit</span></div>
@@ -623,6 +623,7 @@ function setPricingPlan(plan) {
   document.getElementById('pp-period').textContent = p.period;
   document.getElementById('pp-subtext').textContent = p.sub;
   document.getElementById('pp-cta').textContent = p.cta;
+    document.getElementById('pp-cta').href = 'https://app.letflowuk.com/login?mode=signup';
   document.getElementById('pp-badge').textContent = p.badge;
   document.getElementById('pp-badge').style.background = p.badgeBg;
   ['founding','annual','monthly'].forEach(id => {
