@@ -716,7 +716,7 @@ async function signup(src) {
   const btn = form ? form.querySelector('button') : null;
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     if (emailEl) { emailEl.style.borderColor = '#ef4444'; setTimeout(() => emailEl.style.borderColor = '', 2500); }
-fix: landing — centre all section headings and subtitles  }
+  }
   if (btn) { btn.textContent = 'Joining...'; btn.disabled = true; }
   try {
     await fetch(SUPABASE_URL + '/rest/v1/waitlist', {
