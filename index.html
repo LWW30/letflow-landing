@@ -247,6 +247,20 @@ footer .logo{flex-shrink:0;min-width:140px}
 }
 
 .section-title{text-align:center!important}.section-subtitle{text-align:center!important}.features-grid h2,.features-grid p{text-align:center}.section .container>h2,.section .container>p{text-align:center}
+
+/* About section */
+.about-section{background:#f8f7f4;padding:96px 48px}
+.about-inner{max-width:1100px;margin:0 auto}
+.about-label{font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--green);margin-bottom:32px;text-transform:uppercase}
+.about-content{display:grid;grid-template-columns:1fr 320px;gap:80px;align-items:start}
+.about-text h2{font-size:clamp(32px,4vw,48px);font-weight:800;line-height:1.15;color:var(--dark);margin-bottom:24px}
+.about-text p{font-size:17px;line-height:1.7;color:#4b5563;margin-bottom:16px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:8px}
+.about-stat{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:28px 24px;text-align:center}
+.about-stat-num{display:block;font-size:28px;font-weight:800;color:var(--dark);margin-bottom:6px}
+.about-stat-label{font-size:13px;color:#6b7280;font-weight:500}
+@media(max-width:768px){.about-content{grid-template-columns:1fr}.about-stats{grid-template-columns:1fr 1fr}}
+
 </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"LetFlowUK","alternateName":"LetFlow UK","url":"https://letflowuk.com","applicationCategory":"BusinessApplication","operatingSystem":"Web, iOS, Android","description":"HMO management software for UK landlords. Track rent per room, RRA 2025 compliance, maintenance, documents.","offers":{"@type":"Offer","price":"19","priceCurrency":"GBP"},"provider":{"@type":"Organization","name":"LetFlowUK","url":"https://letflowuk.com"}}
@@ -263,6 +277,7 @@ footer .logo{flex-shrink:0;min-width:140px}
   </a>
   <div class="nav-links">
     <a href="#features">Features</a>
+    <a href="#about">About</a>
     <a href="#pricing">Pricing</a>
     <a href="mailto:hello@letflowuk.com">Contact</a>
   </div>
@@ -637,6 +652,39 @@ function setPricingPlan(plan) {
 }
 </script>
 
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <div class="about-label">ABOUT</div>
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Built by a UK landlord.<br>For UK landlords.</h2>
+        <p>LetFlowUK started because the software that existed wasn't built for how HMOs actually work.</p>
+        <p>Most tools treat every property as a single tenancy. HMOs have multiple tenants per property, individual rent schedules, shared bills to split, per-room compliance, and now the Renters Rights Act to navigate. No off-the-shelf tool handled all of that cleanly — so we built one from scratch.</p>
+        <p>We're a small team based in the UK. We don't have a sales team, a call centre, or VC funding pushing us to charge more. We have a product we're proud of, a free plan with no credit card, and a founding member offer for landlords who want to lock in early.</p>
+        <p style="margin-top:24px"><strong>hello@letflowuk.com</strong></p>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="about-stat-num">100%</span>
+          <span class="about-stat-label">UK-focused</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">£0</span>
+          <span class="about-stat-label">VC funding</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">Free</span>
+          <span class="about-stat-label">to start</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">Built</span>
+          <span class="about-stat-label">in public</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta" id="cta-section">
   <h2>Start managing your HMO today</h2>
   <p>Free plan available — no credit card needed. Upgrade to Pro — from £29/mo or £240/yr.</p>
@@ -655,7 +703,7 @@ function setPricingPlan(plan) {
     </div>
     LetFlowUK
   </a>
-  <div class="f-links">
+  <div class="f-links"><a href="#about">About</a> 
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
     <a href="mailto:hello@letflowuk.com">Contact</a>
